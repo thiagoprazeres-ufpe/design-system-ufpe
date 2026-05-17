@@ -8,7 +8,7 @@ export const overview = {
     root.append(
       PageHeader({
         eyebrow: 'UFPE Design System',
-        title: 'Bem-vinde',
+        title: 'Bem-vindo',
         lede: 'Design system da Universidade Federal de Pernambuco. Implementação no Penpot, tokens W3C DTCG versionados em Git, portal de docs vivo.',
       }),
       h('section', {},

@@ -10,7 +10,7 @@ const sidebar = document.createElement('aside');
 sidebar.className = 'sidebar';
 sidebar.innerHTML = `
   <div class="brand">
-    <img src="/brasoes/sigla/sigla-rgb.svg" alt="UFPE" />
+    <img src="/brasoes/sigla/sigla-branco.png" alt="UFPE" />
     <div>
       <strong>UFPE</strong>
       <small>Design System</small>
