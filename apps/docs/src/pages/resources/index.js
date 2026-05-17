@@ -60,7 +60,7 @@ export const resourcesIndex = {
         h('h2', {}, 'Plugin Penpot'),
         h('p', {}, h('code', {}, '@ufpe/penpot-plugin'), ' — sincroniza tokens DTCG entre Git e Penpot e oferece validações de uso da marca.'),
         h('p', {}, 'Instalação: no Penpot, ', h('code', {}, 'Menu → Plugins → Add plugin'), ' e cole:'),
-        CodeBlock({ language: 'text', code: 'https://ufpe-design-system.pages.dev/plugin/manifest.json' }),
+        CodeBlock({ language: 'text', code: 'https://ufpe-design-system-plugin.pages.dev/manifest.json' }),
       ),
 
       h('section', {},

@@ -1,0 +1,12 @@
+/*
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET, OPTIONS
+  Access-Control-Allow-Headers: *
+
+/manifest.json
+  Content-Type: application/json
+  Cache-Control: public, max-age=300
+
+/plugin.js
+  Content-Type: text/javascript
+  Cache-Control: public, max-age=300

@@ -20,8 +20,13 @@ async function main() {
     const fileId = ids[key];
     if (!fileId) { console.warn(`skip ${key} (sem fileId)`); continue; }
     if (fileCfg.shared) {
-      await rpc('set-file-shared', { id: fileId, 'is-shared': true });
-      console.log(`✓ ${key} publicado como shared library`);
+      try {
+        await rpc('set-file-shared', { id: fileId, 'is-shared': true });
+        console.log(`✓ ${key} publicado como shared library`);
+      } catch (err) {
+        if (err.message.includes('invalid-shared-state')) console.log(`✓ ${key} já é shared library`);
+        else throw err;
+      }
     }
     for (const linked of fileCfg.linkedLibraries || []) {
       const libId = ids[linked];
