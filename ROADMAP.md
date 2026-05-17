@@ -30,3 +30,38 @@
 - Componentes de UI genéricos (botões, forms, modais) — escopo 2.x.
 - Self-hosting Penpot — escopo 3.0.
 - Integrações Figma/Sketch — não previstas.
+
+---
+
+## Backlog (pendências abertas)
+
+Issues no GitLab: https://gitlab.ufpe.br/thiago.prazeres/design-system-ufpe/-/issues
+
+### Infra (alta prioridade)
+
+| # | Issue | Bloqueia |
+|---|---|---|
+| [#1](https://gitlab.ufpe.br/thiago.prazeres/design-system-ufpe/-/issues/1) | Transferir repo para grupo `stilabs` | CI rodar (#2) |
+| [#2](https://gitlab.ufpe.br/thiago.prazeres/design-system-ufpe/-/issues/2) | Cloudflare: criar API token permanente | Deploy via CI |
+
+### Plugin Penpot (média prioridade)
+
+| # | Issue |
+|---|---|
+| [#3](https://gitlab.ufpe.br/thiago.prazeres/design-system-ufpe/-/issues/3) | SDK API incorreta no push de tokens (toast vermelho) |
+| [#4](https://gitlab.ufpe.br/thiago.prazeres/design-system-ufpe/-/issues/4) | Pull com MR via GitLab API |
+| [#5](https://gitlab.ufpe.br/thiago.prazeres/design-system-ufpe/-/issues/5) | Validador de marca (contraste, área de proteção, redução) |
+
+### Penpot infra / scripts
+
+| # | Issue |
+|---|---|
+| [#6](https://gitlab.ufpe.br/thiago.prazeres/design-system-ufpe/-/issues/6) | `export-snapshot` exige PENPOT_PASSWORD (asset URL não aceita PAT) |
+| [#8](https://gitlab.ufpe.br/thiago.prazeres/design-system-ufpe/-/issues/8) | Penpot self-hosted UFPE (v3.0) |
+
+### Roadmap longo prazo
+
+| # | Issue |
+|---|---|
+| [#7](https://gitlab.ufpe.br/thiago.prazeres/design-system-ufpe/-/issues/7) | Cloudflare custom domain `ds.ufpe.br` (purge instantâneo) |
+| [#9](https://gitlab.ufpe.br/thiago.prazeres/design-system-ufpe/-/issues/9) | Vetorização real do brasão (paths nomeados) |
