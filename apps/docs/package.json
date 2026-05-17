@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "predev": "node scripts/generate-build-info.js",
     "build": "vite build",
+    "prebuild": "node scripts/generate-build-info.js",
     "preview": "vite preview"
   },
   "dependencies": {

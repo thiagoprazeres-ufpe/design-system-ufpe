@@ -1,6 +1,6 @@
 {
   "name": "ufpe-design-system",
-  "version": "0.4.0",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "description": "UFPE Design System — Penpot é a implementação; este repo hospeda tokens (DTCG), plugin Penpot e portal de docs.",

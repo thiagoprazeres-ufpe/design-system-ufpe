@@ -1,6 +1,7 @@
 import { effect } from '@preact/signals-core';
 import { currentPage } from './signals.js';
 import { pages, groups } from './pages/index.js';
+import buildInfo from './build-info.js';
 
 const app = document.getElementById('app');
 app.className = 'app';
@@ -37,6 +38,18 @@ groups.forEach(({ name, pageIds }) => {
     nav.appendChild(btn);
   });
 });
+
+// Footer com versão + link GitLab
+const footer = document.createElement('div');
+footer.className = 'sidebar-footer';
+const label = buildInfo.tag || `v${buildInfo.version}`;
+const refUrl = buildInfo.tagUrl || buildInfo.commitUrl;
+footer.innerHTML = `
+  <a href="${refUrl}" target="_blank" rel="noopener" title="Ver no GitLab UFPE">
+    <span class="ver">${label}</span>
+    <span class="sha">${buildInfo.sha}${buildInfo.dirty ? '·dirty' : ''}</span>
+  </a>`;
+sidebar.appendChild(footer);
 
 // --- main ---
 const main = document.createElement('main');
