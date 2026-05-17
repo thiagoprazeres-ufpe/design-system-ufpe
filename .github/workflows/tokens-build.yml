@@ -1,0 +1,28 @@
+name: tokens-build
+on:
+  pull_request:
+    paths:
+      - 'packages/tokens/**'
+      - '.github/workflows/tokens-build.yml'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with: { version: 9 }
+      - uses: actions/setup-node@v4
+        with: { node-version: 20, cache: pnpm }
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @ufpe/tokens build
+      - name: Validate DTCG
+        run: |
+          test -f packages/tokens/src/tokens.css
+          test -f packages/tokens/src/tokens.js
+          test -f packages/tokens/src/tokens.d.ts
+          test -f packages/tokens/src/tokens.penpot.json
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: tokens
+          path: packages/tokens/src/

@@ -1,0 +1,16 @@
+# Cloudflare Pages — referência para configuração manual no dashboard.
+# (Não consumido por nenhum tool — documentação.)
+
+[docs]
+project_name = "ufpe-design-system"
+production_branch = "main"
+build_command = "pnpm install && pnpm --filter @ufpe/tokens build && pnpm --filter @ufpe/docs build"
+build_output_directory = "apps/docs/dist"
+root_directory = "."
+
+[plugin]
+project_name = "ufpe-design-system-plugin"
+production_branch = "main"
+build_command = "pnpm install && pnpm --filter @ufpe/penpot-plugin build"
+build_output_directory = "packages/penpot-plugin/dist"
+root_directory = "."

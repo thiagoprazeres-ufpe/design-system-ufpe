@@ -1,0 +1,21 @@
+name: penpot-sync
+on:
+  push:
+    branches: [main]
+    paths: ['packages/tokens/dtcg/**']
+jobs:
+  push-tokens:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with: { version: 9 }
+      - uses: actions/setup-node@v4
+        with: { node-version: 20, cache: pnpm }
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @ufpe/tokens build
+      - name: Verify drift (Penpot vs git)
+        env:
+          PENPOT_TOKEN: ${{ secrets.PENPOT_TOKEN }}
+          PENPOT_API: ${{ vars.PENPOT_API }}
+        run: node penpot/scripts/verify-drift.js || echo "::warning::drift detectado — sincronização pendente"

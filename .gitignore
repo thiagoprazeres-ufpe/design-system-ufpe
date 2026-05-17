@@ -3,3 +3,9 @@ node_modules/
 dist/
 *.log
 .env*
+
+# Penpot — file-ids gerado por export-snapshot.js (contém UUIDs do workspace)
+penpot/file-ids.json
+
+# Tokens gerados (rebuild via `pnpm tokens:build`)
+packages/tokens/src/

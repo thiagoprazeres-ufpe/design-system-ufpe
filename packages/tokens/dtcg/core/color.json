@@ -1,0 +1,30 @@
+{
+  "color": {
+    "$description": "Cores institucionais UFPE (Manual de Identidade Visual, pág. 07)",
+    "bordo": {
+      "$value": "#990000",
+      "$type": "color",
+      "$description": "Pantone 201C · CMYK 0/100/63/29 · RGB 162/37/56"
+    },
+    "preto": {
+      "$value": "#000000",
+      "$type": "color",
+      "$description": "Pantone Black · CMYK 0/0/0/100"
+    },
+    "branco": {
+      "$value": "#ffffff",
+      "$type": "color"
+    },
+    "cinza": {
+      "k10": { "$value": "#e6e6e6", "$type": "color" },
+      "k20": { "$value": "#cccccc", "$type": "color" },
+      "k30": { "$value": "#b3b3b3", "$type": "color" },
+      "k40": { "$value": "#999999", "$type": "color" },
+      "k50": { "$value": "#808080", "$type": "color" },
+      "k60": { "$value": "#666666", "$type": "color" },
+      "k70": { "$value": "#4d4d4d", "$type": "color" },
+      "k80": { "$value": "#333333", "$type": "color" },
+      "k90": { "$value": "#1a1a1a", "$type": "color" }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "space": {
+    "$description": "Escala de espaçamento derivada de x (largura do brasão = unidade base)",
+    "x": { "$value": "8px", "$type": "dimension" },
+    "1": { "$value": "8px", "$type": "dimension" },
+    "2": { "$value": "16px", "$type": "dimension" },
+    "3": { "$value": "24px", "$type": "dimension" },
+    "4": { "$value": "32px", "$type": "dimension" },
+    "6": { "$value": "48px", "$type": "dimension" },
+    "8": { "$value": "64px", "$type": "dimension" }
+  },
+  "mark": {
+    "$description": "Proporções da marca (Manual UFPE, pág. 08)",
+    "ratio": {
+      "width":  { "$value": 1,    "$type": "number" },
+      "height": { "$value": 1.5,  "$type": "number" }
+    },
+    "sigla": {
+      "width": { "$value": 0.7,  "$type": "number" },
+      "gap":   { "$value": 0.23, "$type": "number" },
+      "rule":  { "$value": 0.1,  "$type": "number" }
+    },
+    "extenso": {
+      "width": { "$value": 1.2,    "$type": "number" },
+      "gap":   { "$value": 0.53,   "$type": "number" },
+      "rule":  { "$value": 0.0833, "$type": "number" }
+    }
+  }
+}

@@ -1,31 +1,32 @@
-# Roadmap — Design System UFPE
-
-Marcos até a versão **1.0.0**. Versionamento semântico (SemVer).
+# Roadmap — UFPE Design System
 
 | Versão | Escopo | Status |
 |---|---|---|
-| **0.1.0** | Scaffold Vite + tokens (cores, tipografia, spacing) + brasão SVG inicial + showcase base | ✅ |
-| **0.2.0** | Transcrição completa `docs/manual.md` (PDF → Markdown fiel) | ✅ |
-| **0.3.0** | Componente `<Logo>` com kit oficial UFPE (SVG/PDF/AI/EPS/PNG) + área de proteção + malha construtiva interativa | ✅ |
-| **0.4.0** | Assinaturas institucionais como SVGs paramétricos: Pró-reitorias, Centros, Superintendências, Departamentos | 📅 |
-| **0.5.0** | Submarcas + papelaria (ofício, envelopes, cartão, certificado) | 📅 |
-| **0.6.0** | DontDo / validadores (contraste WCAG AA, área de proteção, redução mínima) | 📅 |
-| **0.7.0** | Exporters: CSS vars, JSON (W3C Design Tokens), TypeScript types | 📅 |
-| **0.8.0** | Penpot handoff — camada 1 (library.json + drag-and-drop) | ✅ stub |
-| **0.9.0** | Penpot handoff — camada 2 (.penpot ZIP) + testes visuais (Playwright screenshot-diff) + deploy docs (GH Pages) | 📅 |
-| **1.0.0** | Cobertura 100% do manual, Penpot CLI/API em CI, CHANGELOG, licença formalizada | 📅 |
+| **0.1–0.3** | Tokens raw + showcase manual + kit oficial UFPE (sigla/extenso × rgb/preto/branco) | ✅ |
+| **0.4.0** | Monorepo pnpm + `packages/tokens` em W3C DTCG + build próprio (CSS/JS/TS/Penpot JSON) | ✅ |
+| **0.5.0** | `apps/docs` (portal zeroheight-style) — substitui o showcase | ✅ |
+| **0.6.0** | Workspace Penpot criado + library `UFPE / Foundations` publicada (color/typo/spacing) | 📅 |
+| **0.7.0** | Library `UFPE / Marca` — Logo com variants `sigla` / `extenso` × `rgb` / `preto` / `branco` | 📅 |
+| **0.8.0** | `@ufpe/penpot-plugin` v1 — push DTCG → Penpot (cores) | ✅ scaffold |
+| **0.9.0** | Plugin v2 — pull tokens (PR automático via Octokit) + validador WCAG AA | 📅 |
+| **1.0.0** | Library `UFPE / Assinaturas Institucionais` (Pró-reitorias, Centros, Superintendências, Departamentos) + RPC scripts (publish-library, export-snapshot) em produção + docs publicado em ufpe-design-system.pages.dev | 📅 |
+| **1.1.0** | Library `UFPE / Submarcas` | 📅 |
+| **1.2.0** | Library `UFPE / Aplicações & Papelaria` (ofício, envelope, cartão, certificado, avatar) usando Flexible Layouts | 📅 |
+| **2.0.0** | Validador de marca completo (área de proteção, redução mínima, usos incorretos) + tema escuro | 📅 |
+| **2.1.0** | Contribution flow (RFC template, design review process) | 📅 |
+| **3.0.0** | Self-host Penpot UFPE + SSO institucional + governança formal | 📅 |
 
-## Critérios de release 1.0.0
+## Critérios para 1.0
 
-- [ ] Todas as 58 páginas do manual representadas no showcase.
-- [ ] Brasão redesenhado a partir da malha construtiva (não placeholder).
-- [ ] Cobertura de testes visuais > 90%.
-- [ ] Documentação publicada (GH Pages) com URL canônica.
-- [ ] Biblioteca Penpot publicada e importável por 1 clique.
-- [ ] Aprovação formal da Diretoria de Comunicação da UFPE.
+- [ ] Workspace Penpot oficial UFPE criado e team configurado.
+- [ ] Foundations + Marca + Assinaturas publicadas como Shared Libraries.
+- [ ] Plugin Penpot publicado em Cloudflare Pages, URL estável.
+- [ ] Docs portal publicado em `https://ufpe-design-system.pages.dev`.
+- [ ] CI: tokens-build, penpot-snapshot (nightly), release (tag v*), docs-deploy.
+- [ ] Approval formal da Diretoria de Comunicação UFPE.
 
 ## Fora do escopo até 1.0
 
-- Componentes de UI genéricos (botões, forms, modais) — escopo para 2.x.
-- Tema escuro — escopo para 2.x.
-- App mobile / React Native — escopo separado.
+- Componentes de UI genéricos (botões, forms, modais) — escopo 2.x.
+- Self-hosting Penpot — escopo 3.0.
+- Integrações Figma/Sketch — não previstas.

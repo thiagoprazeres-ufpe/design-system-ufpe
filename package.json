@@ -1,24 +1,21 @@
 {
-  "name": "@ufpe/design-system",
-  "version": "0.1.0",
-  "description": "Design System da UFPE — implementação fiel ao Manual de Identidade Visual",
-  "type": "module",
+  "name": "ufpe-design-system",
+  "version": "0.4.0",
   "private": true,
+  "description": "UFPE Design System — Penpot é a implementação; este repo hospeda tokens (DTCG), plugin Penpot e portal de docs.",
   "license": "SEE LICENSE IN README.md",
+  "packageManager": "pnpm@9.0.0",
   "scripts": {
-    "dev": "vite",
-    "predev": "bash scripts/build-svgs.sh",
-    "build": "vite build",
-    "prebuild": "bash scripts/build-svgs.sh",
-    "preview": "vite preview",
-    "tokens:build": "node scripts/build-tokens.js",
-    "penpot:export": "node penpot/export-to-penpot.js"
-  },
-  "dependencies": {
-    "@preact/signals-core": "^1.8.0"
+    "build": "pnpm -r --filter './packages/*' build && pnpm --filter @ufpe/docs build",
+    "dev": "pnpm --filter @ufpe/docs dev",
+    "dev:plugin": "pnpm --filter @ufpe/penpot-plugin dev",
+    "tokens:build": "pnpm --filter @ufpe/tokens build",
+    "penpot:snapshot": "node penpot/scripts/export-snapshot.js",
+    "penpot:publish": "node penpot/scripts/publish-library.js",
+    "penpot:verify": "node penpot/scripts/verify-drift.js",
+    "brasoes:build-svg": "bash scripts/build-svgs.sh"
   },
   "devDependencies": {
-    "vite": "^5.4.0",
-    "svgo": "^3.3.2"
+    "typescript": "^5.6.0"
   }
 }

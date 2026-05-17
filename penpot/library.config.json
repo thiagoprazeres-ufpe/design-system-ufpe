@@ -1,0 +1,38 @@
+{
+  "team": "UFPE",
+  "project": "Design System UFPE",
+  "files": {
+    "00-foundations": {
+      "name": "UFPE / Foundations",
+      "shared": true,
+      "scope": ["tokens", "colors", "typography", "spacing"]
+    },
+    "01-marca": {
+      "name": "UFPE / Marca",
+      "shared": true,
+      "linkedLibraries": ["00-foundations"],
+      "scope": ["logo", "brasão"]
+    },
+    "02-assinaturas": {
+      "name": "UFPE / Assinaturas Institucionais",
+      "shared": true,
+      "linkedLibraries": ["00-foundations", "01-marca"],
+      "scope": ["pro-reitorias", "centros", "superintendencias", "departamentos"]
+    },
+    "03-submarcas": {
+      "name": "UFPE / Submarcas",
+      "shared": true,
+      "linkedLibraries": ["00-foundations", "01-marca"]
+    },
+    "04-aplicacoes": {
+      "name": "UFPE / Aplicações & Papelaria",
+      "shared": true,
+      "linkedLibraries": ["00-foundations", "01-marca"],
+      "scope": ["ofício", "envelope", "cartão", "certificado", "avatar"]
+    },
+    "05-docs": {
+      "name": "UFPE / Docs (nativo Penpot)",
+      "shared": false
+    }
+  }
+}
