@@ -1,0 +1,45 @@
+{
+  "$schema": "https://penpot.app/schemas/library.json",
+  "name": "UFPE — Identidade Visual",
+  "version": "0.1.0",
+  "description": "Biblioteca compartilhada do design system UFPE. Cores, tipografia e componentes de marca.",
+  "license": "Uso restrito a membros da UFPE",
+  "source": "https://github.com/ufpe/design-system",
+  "colors": [
+    { "name": "Bordô", "value": "#990000", "ref": "Pantone 201C", "tags": ["institucional", "primária"] },
+    { "name": "Preto", "value": "#000000", "ref": "Pantone Black", "tags": ["institucional", "primária"] },
+    { "name": "Branco", "value": "#ffffff", "tags": ["institucional"] },
+    { "name": "Cinza K90", "value": "#1A1A1A" },
+    { "name": "Cinza K80", "value": "#333333" },
+    { "name": "Cinza K70", "value": "#4D4D4D" },
+    { "name": "Cinza K60", "value": "#666666" },
+    { "name": "Cinza K50", "value": "#808080" },
+    { "name": "Cinza K40", "value": "#999999" },
+    { "name": "Cinza K30", "value": "#B3B3B3" },
+    { "name": "Cinza K20", "value": "#CCCCCC" },
+    { "name": "Cinza K10", "value": "#E6E6E6" }
+  ],
+  "typography": [
+    { "name": "Sans / Trebuchet MS",
+      "fontFamily": "Trebuchet MS, Lucida Grande, Tahoma, sans-serif",
+      "variants": ["Normal", "Negrito", "Itálico", "Negrito e itálico"],
+      "smallCaps": true,
+      "note": "Versalete usado em assinaturas institucionais." }
+  ],
+  "components": [
+    { "name": "Marca/Sigla (RGB)",      "file": "../public/brasoes/sigla/sigla-rgb.svg",   "formats": ["svg","pdf","ai","eps","png","jpg"] },
+    { "name": "Marca/Sigla (Preto)",    "file": "../public/brasoes/sigla/sigla-preto.png" },
+    { "name": "Marca/Sigla (Branco)",   "file": "../public/brasoes/sigla/sigla-branco.png" },
+    { "name": "Marca/Extenso (RGB)",    "file": "../public/brasoes/extenso/extenso-rgb.svg", "formats": ["svg","pdf","ai","eps","png","jpg"] },
+    { "name": "Marca/Extenso (Preto)",  "file": "../public/brasoes/extenso/extenso-preto.png" },
+    { "name": "Marca/Extenso (Branco)", "file": "../public/brasoes/extenso/extenso-branco.png" }
+  ],
+  "tokens": {
+    "spacing": { "x": 8, "scale": [8, 16, 24, 32, 48, 64] },
+    "markRatios": {
+      "width": 1, "height": 1.5,
+      "sigla": { "width": 0.7, "gap": 0.23, "rule": 0.1 },
+      "extenso": { "width": 1.2, "gap": 0.53, "rule": 0.0833 }
+    }
+  }
+}
