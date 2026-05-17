@@ -53,9 +53,7 @@ export const assinaturasPage = {
 
       h('section', {},
         h('h2', {}, 'Outras categorias'),
-        h('p', {}, 'Centros, superintendências, departamentos, programas de pós-graduação e núcleos — todas seguem o mesmo padrão. Lista completa em ',
-          h('a', { href: '/manual_identidade.pdf', target: '_blank' }, 'manual_identidade.pdf'),
-          ' (pp. 23–40).'),
+        h('p', {}, 'Centros, superintendências, departamentos, programas de pós-graduação e núcleos — todas seguem o mesmo padrão. Lista completa no Manual de Identidade Visual UFPE (pp. 23–40), disponível com a Diretoria de Comunicação.'),
       ),
     );
   },

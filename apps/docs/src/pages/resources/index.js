@@ -64,9 +64,8 @@ export const resourcesIndex = {
       ),
 
       h('section', {},
-        h('h2', {}, 'Manual de Identidade Visual (PDF)'),
-        h('p', {}, h('a', { href: '/manual_identidade.pdf', target: '_blank' }, 'manual_identidade.pdf ↗'),
-          ' — documento canônico (58 páginas).'),
+        h('h2', {}, 'Manual de Identidade Visual'),
+        h('p', {}, 'O Manual de Identidade Visual da UFPE (58 páginas, PDF) é a fonte canônica. Solicite à Diretoria de Comunicação.'),
       ),
     );
   },

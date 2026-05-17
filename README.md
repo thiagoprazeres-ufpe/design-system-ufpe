@@ -38,7 +38,6 @@ ufpe-design-system/
 │   └── scripts/         # export-snapshot, publish-library, verify-drift
 ├── public/brasoes/      # kit oficial UFPE (sigla + extenso)
 ├── .github/workflows/   # tokens-build, penpot-sync, penpot-snapshot, release, docs-deploy
-├── manual_identidade.pdf
 └── ROADMAP.md
 ```
 
@@ -157,7 +156,7 @@ git clone https://gitlab.ufpe.br/thiago.prazeres/design-system-ufpe.git
 
 ## Licença
 
-Uso restrito a membros da Universidade Federal de Pernambuco, conforme determinado pelo Manual de Identidade Visual ([manual_identidade.pdf](./manual_identidade.pdf)).
+Uso restrito a membros da Universidade Federal de Pernambuco, conforme determinado pelo Manual de Identidade Visual da UFPE.
 
 ## Contribuir
 
