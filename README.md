@@ -117,11 +117,37 @@ packages/tokens/dtcg/  ── push ──▶  Penpot library
 ```
 
 Pipeline:
-- **PR de tokens** (`packages/tokens/dtcg/**`) → CI valida + gera build.
-- **Merge em main** → workflow chama `verify-drift.js`.
-- **Designer edita no Penpot** → plugin "Pull" → PR no GitHub.
-- **Nightly snapshot** → `.penpot` commitado em `penpot/files/`.
-- **Tag `v*`** → release com `tokens.penpot.json` + `.penpot` files + bundle.
+- **MR de tokens** (`packages/tokens/dtcg/**`) → CI valida + gera build.
+- **Merge em master** → CI deploya docs + plugin para Cloudflare Pages.
+- **Designer edita no Penpot** → plugin "Pull" → MR no GitLab (v0.9).
+- **Tag `v*`** → release Penpot library publish + `tokens.penpot.json` artifact.
+
+## Produção
+
+| Recurso | URL |
+|---|---|
+| Portal de docs | https://ufpe-design-system.pages.dev |
+| Plugin Penpot (manifest) | https://ufpe-design-system-plugin.pages.dev/manifest.json |
+| Tokens DTCG (raw) | https://ufpe-design-system.pages.dev/tokens.penpot.json _(roadmap)_ |
+| Repo | https://gitlab.ufpe.br/thiago.prazeres/design-system-ufpe |
+
+### Cloudflare CI/CD
+
+Pipeline GitLab CI (`.gitlab-ci.yml`) builda + deploya em `master` via `wrangler`.
+
+Variáveis necessárias (CI/CD Settings → Variables, marcar **masked** + **protected**):
+- `CLOUDFLARE_API_TOKEN` — token API com permissão `Cloudflare Pages: Edit`. Criar em https://dash.cloudflare.com/profile/api-tokens (template "Edit Cloudflare Pages"). **Rotacionar quando necessário.**
+- `CLOUDFLARE_ACCOUNT_ID` — encontrado no canto direito do dashboard Cloudflare.
+- `PENPOT_API` + `PENPOT_TOKEN` _(opcional, só p/ tags v* fazerem `publish-library`)_.
+
+### Git LFS
+
+PDFs e arquivos `.penpot` são versionados via Git LFS (configurado em `.gitattributes`). Clone com:
+
+```bash
+git lfs install
+git clone https://gitlab.ufpe.br/thiago.prazeres/design-system-ufpe.git
+```
 
 ## Penpot — caveats
 
