@@ -1,0 +1,2 @@
+# Force 404 para o PDF (removido do repo) — bypass cache antigo
+/manual_identidade.pdf  /404.html  404
