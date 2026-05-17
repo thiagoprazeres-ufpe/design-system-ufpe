@@ -67,7 +67,8 @@ build:plugin:
   image: node:22-alpine
   before_script:
     - npm install -g wrangler@4
-  only: [master]
+  rules:
+    - if: $CI_COMMIT_BRANCH == "master"
 
 deploy:docs:
   <<: *cloudflare-deploy
@@ -100,19 +101,14 @@ deploy:plugin:
 release:penpot:
   stage: release
   needs: [build:tokens]
-  only: [tags]
   rules:
     - if: $CI_COMMIT_TAG =~ /^v\d+\.\d+\.\d+/
   script:
     - node penpot/scripts/publish-library.js
-  variables:
-    PENPOT_API: $PENPOT_API
-    PENPOT_TOKEN: $PENPOT_TOKEN
 
 release:artifact:
   stage: release
   needs: [build:tokens, build:docs, build:plugin]
-  only: [tags]
   rules:
     - if: $CI_COMMIT_TAG =~ /^v\d+\.\d+\.\d+/
   script:
