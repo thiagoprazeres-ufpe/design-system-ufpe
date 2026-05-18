@@ -30,7 +30,7 @@ export const assinaturasPage = {
         h('div', { style: { display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(320px,1fr))', gap: 'var(--space-3)' } },
           ...PRO_REITORIAS.map(([sigla, nome]) =>
             h('div', { style: { display: 'flex', alignItems: 'center', gap: 'var(--space-2)', padding: 'var(--space-2)', border: '1px solid var(--color-border-default)', borderRadius: '6px' } },
-              h('img', { src: '/brasoes/sigla/sigla-rgb.svg', alt: 'UFPE', style: { width: '64px', height: 'auto' } }),
+              h('img', { src: 'brasoes/sigla/sigla-rgb.svg', alt: 'UFPE', style: { width: '64px', height: 'auto' } }),
               h('div', {},
                 h('strong', { style: { color: 'var(--color-text-brand)', fontSize: 'var(--font-size-md)', display: 'block' } }, sigla),
                 h('span', { class: 'versalete', style: { fontSize: 'var(--font-size-xs)', color: 'var(--color-text-default)' } }, nome),
