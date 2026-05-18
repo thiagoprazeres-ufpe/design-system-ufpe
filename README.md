@@ -20,7 +20,7 @@
 | Build de tokens | Script vanilla (`packages/tokens/build.js`) → CSS / JS / TS / Penpot JSON |
 | Sincronização | `@ufpe/penpot-plugin` (push/pull) |
 | Portal de docs | Vite + `@preact/signals-core` |
-| CI / Releases | GitHub Actions + Cloudflare Pages |
+| CI / Releases | GitHub Actions + GitHub Pages |
 
 ## Estrutura (monorepo pnpm)
 
@@ -117,7 +117,7 @@ packages/tokens/dtcg/  ── push ──▶  Penpot library
 
 Pipeline:
 - **MR de tokens** (`packages/tokens/dtcg/**`) → CI valida + gera build.
-- **Merge em master** → CI deploya docs + plugin para Cloudflare Pages.
+- **Merge em master** → CI deploya docs + plugin para GitHub Pages.
 - **Designer edita no Penpot** → plugin "Pull" → MR no GitLab (v0.9).
 - **Tag `v*`** → release Penpot library publish + `tokens.penpot.json` artifact.
 
@@ -125,27 +125,23 @@ Pipeline:
 
 | Recurso | URL |
 |---|---|
-| Portal de docs | https://ufpe-design-system.pages.dev |
-| Plugin Penpot (manifest) | https://ufpe-design-system-plugin.pages.dev/manifest.json |
-| Tokens DTCG (raw) | https://ufpe-design-system.pages.dev/tokens.penpot.json _(roadmap)_ |
-| Repo | https://gitlab.ufpe.br/thiago.prazeres/design-system-ufpe |
+| Portal de docs | https://thiagoprazeres-ufpe.github.io/design-system-ufpe |
+| Plugin Penpot (manifest) | https://thiagoprazeres-ufpe.github.io/design-system-ufpe/plugin/manifest.json |
+| Tokens DTCG (raw) | https://thiagoprazeres-ufpe.github.io/design-system-ufpe/tokens.penpot.json _(roadmap)_ |
+| Repo | https://github.com/thiagoprazeres-ufpe/design-system-ufpe |
 
-### Cloudflare CI/CD
+### Deploy
 
-Pipeline GitLab CI (`.gitlab-ci.yml`) builda + deploya em `master` via `wrangler`.
-
-Variáveis necessárias (CI/CD Settings → Variables, marcar **masked** + **protected**):
-- `CLOUDFLARE_API_TOKEN` — token API com permissão `Cloudflare Pages: Edit`. Criar em https://dash.cloudflare.com/profile/api-tokens (template "Edit Cloudflare Pages"). **Rotacionar quando necessário.**
-- `CLOUDFLARE_ACCOUNT_ID` — encontrado no canto direito do dashboard Cloudflare.
-- `PENPOT_API` + `PENPOT_TOKEN` _(opcional, só p/ tags v* fazerem `publish-library`)_.
+GitHub Actions (`.github/workflows/deploy-pages.yml`) builda e publica em GitHub Pages a cada push em `master`. Sem secrets necessários — usa o token automático `GITHUB_TOKEN`.
 
 ### Git LFS
+
 
 PDFs e arquivos `.penpot` são versionados via Git LFS (configurado em `.gitattributes`). Clone com:
 
 ```bash
 git lfs install
-git clone https://gitlab.ufpe.br/thiago.prazeres/design-system-ufpe.git
+git clone https://github.com/thiagoprazeres-ufpe/design-system-ufpe.git
 ```
 
 ## Penpot — caveats

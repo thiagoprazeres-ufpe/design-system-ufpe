@@ -1,8 +1,13 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'node:path';
 
+// Base path: '/' em dev (localhost) e '/design-system-ufpe/' em produção (GH Pages).
+// Sobrescreva via env BASE=/foo/ em CI customizado.
+const base = process.env.BASE ?? (process.env.NODE_ENV === 'production' ? '/design-system-ufpe/' : '/');
+
 export default defineConfig({
   root: '.',
+  base,
   publicDir: resolve(__dirname, '../../public'),
   resolve: {
     alias: {

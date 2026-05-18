@@ -11,7 +11,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const APP_ROOT = resolve(__dirname, '..');
 const REPO_ROOT = resolve(APP_ROOT, '../..');
 
-const REPO_URL = 'https://gitlab.ufpe.br/thiago.prazeres/design-system-ufpe';
+const REPO_URL = 'https://github.com/thiagoprazeres-ufpe/design-system-ufpe';
 
 const sh = (cmd) => { try { return execSync(cmd, { cwd: REPO_ROOT }).toString().trim(); } catch { return null; } };
 

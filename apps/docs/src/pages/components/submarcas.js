@@ -62,7 +62,7 @@ export const submarcasPage = {
 
       h('div', { class: 'callout' },
         h('p', {}, 'Novas submarcas devem ser aprovadas pela Diretoria de Comunicação. Solicite inclusão neste catálogo via MR no ',
-          h('a', { href: 'https://gitlab.ufpe.br/thiago.prazeres/design-system-ufpe', target: '_blank' }, 'GitLab'),
+          h('a', { href: 'https://github.com/thiagoprazeres-ufpe/design-system-ufpe', target: '_blank' }, 'GitHub'),
           '.')),
     );
   },

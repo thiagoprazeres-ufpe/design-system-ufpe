@@ -84,8 +84,8 @@ export const changelog = {
         )
       )),
       h('div', { class: 'callout' },
-        h('p', {}, 'Compare commits no GitLab: ',
-          h('a', { href: `${buildInfo.repo}/-/commits/master`, target: '_blank', rel: 'noopener' }, 'gitlab.ufpe.br ↗'))),
+        h('p', {}, 'Compare commits no GitHub: ',
+          h('a', { href: `${buildInfo.repo}/commits/master`, target: '_blank', rel: 'noopener' }, 'github.com ↗'))),
     );
   },
 };

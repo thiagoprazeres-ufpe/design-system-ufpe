@@ -21,7 +21,7 @@
 - [ ] Workspace Penpot oficial UFPE criado e team configurado.
 - [ ] Foundations + Marca + Assinaturas publicadas como Shared Libraries.
 - [ ] Plugin Penpot publicado em Cloudflare Pages, URL estável.
-- [ ] Docs portal publicado em `https://ufpe-design-system.pages.dev`.
+- [ ] Docs portal publicado em `https://thiagoprazeres-ufpe.github.io/design-system-ufpe`.
 - [ ] CI: tokens-build, penpot-snapshot (nightly), release (tag v*), docs-deploy.
 - [ ] Approval formal da Diretoria de Comunicação UFPE.
 
@@ -35,33 +35,33 @@
 
 ## Backlog (pendências abertas)
 
-Issues no GitLab: https://gitlab.ufpe.br/thiago.prazeres/design-system-ufpe/-/issues
+Issues no GitLab: https://github.com/thiagoprazeres-ufpe/design-system-ufpe/issues
 
 ### Infra (alta prioridade)
 
 | # | Issue | Bloqueia |
 |---|---|---|
-| [#1](https://gitlab.ufpe.br/thiago.prazeres/design-system-ufpe/-/issues/1) | Transferir repo para grupo `stilabs` | CI rodar (#2) |
-| [#2](https://gitlab.ufpe.br/thiago.prazeres/design-system-ufpe/-/issues/2) | Cloudflare: criar API token permanente | Deploy via CI |
+| [#1](https://github.com/thiagoprazeres-ufpe/design-system-ufpe/issues/1) | Transferir repo para grupo `stilabs` | CI rodar (#2) |
+| [#2](https://github.com/thiagoprazeres-ufpe/design-system-ufpe/issues/2) | Cloudflare: criar API token permanente | Deploy via CI |
 
 ### Plugin Penpot (média prioridade)
 
 | # | Issue |
 |---|---|
-| [#3](https://gitlab.ufpe.br/thiago.prazeres/design-system-ufpe/-/issues/3) | SDK API incorreta no push de tokens (toast vermelho) |
-| [#4](https://gitlab.ufpe.br/thiago.prazeres/design-system-ufpe/-/issues/4) | Pull com MR via GitLab API |
-| [#5](https://gitlab.ufpe.br/thiago.prazeres/design-system-ufpe/-/issues/5) | Validador de marca (contraste, área de proteção, redução) |
+| [#3](https://github.com/thiagoprazeres-ufpe/design-system-ufpe/issues/3) | SDK API incorreta no push de tokens (toast vermelho) |
+| [#4](https://github.com/thiagoprazeres-ufpe/design-system-ufpe/issues/4) | Pull com MR via GitLab API |
+| [#5](https://github.com/thiagoprazeres-ufpe/design-system-ufpe/issues/5) | Validador de marca (contraste, área de proteção, redução) |
 
 ### Penpot infra / scripts
 
 | # | Issue |
 |---|---|
-| [#6](https://gitlab.ufpe.br/thiago.prazeres/design-system-ufpe/-/issues/6) | `export-snapshot` exige PENPOT_PASSWORD (asset URL não aceita PAT) |
-| [#8](https://gitlab.ufpe.br/thiago.prazeres/design-system-ufpe/-/issues/8) | Penpot self-hosted UFPE (v3.0) |
+| [#6](https://github.com/thiagoprazeres-ufpe/design-system-ufpe/issues/6) | `export-snapshot` exige PENPOT_PASSWORD (asset URL não aceita PAT) |
+| [#8](https://github.com/thiagoprazeres-ufpe/design-system-ufpe/issues/8) | Penpot self-hosted UFPE (v3.0) |
 
 ### Roadmap longo prazo
 
 | # | Issue |
 |---|---|
-| [#7](https://gitlab.ufpe.br/thiago.prazeres/design-system-ufpe/-/issues/7) | Cloudflare custom domain `ds.ufpe.br` (purge instantâneo) |
-| [#9](https://gitlab.ufpe.br/thiago.prazeres/design-system-ufpe/-/issues/9) | Vetorização real do brasão (paths nomeados) |
+| [#7](https://github.com/thiagoprazeres-ufpe/design-system-ufpe/issues/7) | Cloudflare custom domain `ds.ufpe.br` (purge instantâneo) |
+| [#9](https://github.com/thiagoprazeres-ufpe/design-system-ufpe/issues/9) | Vetorização real do brasão (paths nomeados) |
