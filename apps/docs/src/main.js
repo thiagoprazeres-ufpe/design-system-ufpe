@@ -56,6 +56,19 @@ const main = document.createElement('main');
 main.className = 'main';
 app.append(sidebar, main);
 
+// --- mobile menu toggle ---
+const toggle = document.createElement('button');
+toggle.className = 'menu-toggle';
+toggle.setAttribute('aria-label', 'Abrir menu');
+toggle.innerHTML = '<svg viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>';
+const backdrop = document.createElement('div');
+backdrop.className = 'nav-backdrop';
+const closeNav = () => document.body.classList.remove('nav-open');
+toggle.addEventListener('click', () => document.body.classList.toggle('nav-open'));
+backdrop.addEventListener('click', closeNav);
+nav.addEventListener('click', e => { if (e.target.matches('button[data-id]')) closeNav(); });
+document.body.append(toggle, backdrop);
+
 // Initial hash routing
 const initial = location.hash.slice(1);
 if (initial && pages[initial]) currentPage.value = initial;
