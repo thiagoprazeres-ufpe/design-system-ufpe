@@ -1,5 +1,6 @@
 import { h } from '../../components/h.js';
 import { PageHeader } from '../../components/PageHeader.js';
+import { publicAsset } from '../../utils/publicAsset.js';
 
 export const construcao = {
   label: 'Construção',
@@ -24,11 +25,11 @@ export const construcao = {
         h('div', { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-3)' } },
           h('div', {},
             h('h3', {}, 'Sigla'),
-            h('img', { src: 'brasoes/sigla/sigla-rgb.svg', alt: 'Construção sigla', style: { maxWidth: '240px' } })
+            h('img', { src: publicAsset('brasoes/sigla/sigla-rgb.svg'), alt: 'Construção sigla', style: { maxWidth: '240px' } })
           ),
           h('div', {},
             h('h3', {}, 'Extenso'),
-            h('img', { src: 'brasoes/extenso/extenso-rgb.svg', alt: 'Construção extenso', style: { maxWidth: '240px' } })
+            h('img', { src: publicAsset('brasoes/extenso/extenso-rgb.svg'), alt: 'Construção extenso', style: { maxWidth: '240px' } })
           ),
         )
       ),

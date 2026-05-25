@@ -1,22 +1,23 @@
 import { h } from '../../components/h.js';
 import { PageHeader } from '../../components/PageHeader.js';
 import { CodeBlock } from '../../components/CodeBlock.js';
+import { publicAsset } from '../../utils/publicAsset.js';
 
 const DOWNLOADS = [
-  ['Sigla — SVG (web)',     '/brasoes/sigla/sigla-rgb.svg',     'image/svg+xml'],
-  ['Sigla — PDF',           '/brasoes/sigla/sigla-rgb.pdf',     'application/pdf'],
-  ['Sigla — AI',            '/brasoes/sigla/sigla-rgb.ai',      'application/postscript'],
-  ['Sigla — EPS',           '/brasoes/sigla/sigla-rgb.eps',     'application/postscript'],
-  ['Sigla — PNG (colorida)', '/brasoes/sigla/sigla-rgb.png',     'image/png'],
-  ['Sigla — PNG (preto)',   '/brasoes/sigla/sigla-preto.png',   'image/png'],
-  ['Sigla — PNG (branco)',  '/brasoes/sigla/sigla-branco.png',  'image/png'],
-  ['Extenso — SVG',         '/brasoes/extenso/extenso-rgb.svg', 'image/svg+xml'],
-  ['Extenso — PDF',         '/brasoes/extenso/extenso-rgb.pdf', 'application/pdf'],
-  ['Extenso — AI',          '/brasoes/extenso/extenso-rgb.ai',  'application/postscript'],
-  ['Extenso — EPS',         '/brasoes/extenso/extenso-rgb.eps', 'application/postscript'],
-  ['Extenso — PNG',         '/brasoes/extenso/extenso-rgb.png', 'image/png'],
-  ['Extenso — PNG (preto)',  '/brasoes/extenso/extenso-preto.png', 'image/png'],
-  ['Extenso — PNG (branco)', '/brasoes/extenso/extenso-branco.png', 'image/png'],
+  ['Sigla — SVG (web)',     'brasoes/sigla/sigla-rgb.svg',     'image/svg+xml'],
+  ['Sigla — PDF',           'brasoes/sigla/sigla-rgb.pdf',     'application/pdf'],
+  ['Sigla — AI',            'brasoes/sigla/sigla-rgb.ai',      'application/postscript'],
+  ['Sigla — EPS',           'brasoes/sigla/sigla-rgb.eps',     'application/postscript'],
+  ['Sigla — PNG (colorida)', 'brasoes/sigla/sigla-rgb.png',     'image/png'],
+  ['Sigla — PNG (preto)',   'brasoes/sigla/sigla-preto.png',   'image/png'],
+  ['Sigla — PNG (branco)',  'brasoes/sigla/sigla-branco.png',  'image/png'],
+  ['Extenso — SVG',         'brasoes/extenso/extenso-rgb.svg', 'image/svg+xml'],
+  ['Extenso — PDF',         'brasoes/extenso/extenso-rgb.pdf', 'application/pdf'],
+  ['Extenso — AI',          'brasoes/extenso/extenso-rgb.ai',  'application/postscript'],
+  ['Extenso — EPS',         'brasoes/extenso/extenso-rgb.eps', 'application/postscript'],
+  ['Extenso — PNG',         'brasoes/extenso/extenso-rgb.png', 'image/png'],
+  ['Extenso — PNG (preto)',  'brasoes/extenso/extenso-preto.png', 'image/png'],
+  ['Extenso — PNG (branco)', 'brasoes/extenso/extenso-branco.png', 'image/png'],
 ];
 
 export const resourcesIndex = {
@@ -32,16 +33,18 @@ export const resourcesIndex = {
         h('h2', {}, 'Kit oficial — brasões'),
         h('table', {},
           h('thead', {}, h('tr', {}, h('th', {}, 'Arquivo'), h('th', {}, 'Caminho'))),
-          h('tbody', {}, ...DOWNLOADS.map(([name, href]) =>
-            h('tr', {}, h('td', {}, name), h('td', {}, h('a', { href, download: true }, h('code', {}, href))))
-          )),
+          h('tbody', {}, ...DOWNLOADS.map(([name, path]) => {
+            const href = publicAsset(path);
+            return h('tr', {}, h('td', {}, name), h('td', {}, h('a', { href, download: true }, h('code', {}, href))));
+          })
+          ),
         ),
       ),
 
       h('section', {},
         h('h2', {}, 'Design Tokens (W3C DTCG)'),
         h('p', {}, 'JSON canônico para importar no Penpot ou em qualquer ferramenta compatível com DTCG.'),
-        h('p', {}, h('a', { href: '/tokens/tokens.penpot.json', download: true }, 'Baixar tokens.penpot.json ↗')),
+        h('p', {}, h('a', { href: publicAsset('tokens/tokens.penpot.json'), download: true }, 'Baixar tokens.penpot.json ↗')),
         CodeBlock({ language: 'bash', code: 'pnpm add @ufpe/tokens\n# ou:\ncurl -O https://ufpe.github.io/design-system/tokens.penpot.json' }),
       ),
 

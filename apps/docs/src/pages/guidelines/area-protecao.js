@@ -1,5 +1,6 @@
 import { h } from '../../components/h.js';
 import { PageHeader } from '../../components/PageHeader.js';
+import { publicAsset } from '../../utils/publicAsset.js';
 
 export const areaProtecao = {
   label: 'Área de proteção',
@@ -14,7 +15,7 @@ export const areaProtecao = {
           ['sigla', 'extenso'].map(v =>
             h('div', { style: { textAlign: 'center' } },
               h('div', { style: { border: '1px dashed var(--color-text-brand)', padding: '30px', display: 'inline-block' } },
-                h('img', { src: `brasoes/${v}/${v}-rgb.svg`, alt: '', style: { width: '160px' } })
+                h('img', { src: publicAsset(`brasoes/${v}/${v}-rgb.svg`), alt: '', style: { width: '160px' } })
               ),
               h('div', { style: { fontSize: 'var(--font-size-xs)', marginTop: '8px' } }, v)
             )

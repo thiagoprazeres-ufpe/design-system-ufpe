@@ -1,5 +1,6 @@
 import { h } from '../../components/h.js';
 import { PageHeader } from '../../components/PageHeader.js';
+import { publicAsset } from '../../utils/publicAsset.js';
 
 const RULES = [
   'Não utilizar a marca sem a sigla ou sem o texto por extenso',
@@ -28,7 +29,7 @@ export const usosIncorretos = {
       h('div', { class: 'dont-grid' },
         ...RULES.map((rule, i) => h('div', { class: 'dont-card' },
           h('div', { style: { position: 'relative', textAlign: 'center' } },
-            h('img', { src: 'brasoes/sigla/sigla-rgb.svg', style: { width: '100%', maxWidth: '120px', opacity: 0.5 } }),
+            h('img', { src: publicAsset('brasoes/sigla/sigla-rgb.svg'), style: { width: '100%', maxWidth: '120px', opacity: 0.5 } }),
             h('div', { html: `
               <svg viewBox="0 0 100 100" style="position:absolute;inset:0;width:100%;height:100%">
                 <line x1="10" y1="10" x2="90" y2="90" stroke="#999" stroke-width="3"/>

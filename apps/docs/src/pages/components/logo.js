@@ -3,6 +3,7 @@ import { PageHeader } from '../../components/PageHeader.js';
 import { DocsLogoPreview } from '../../components/DocsLogoPreview.js';
 import { PenpotEmbed } from '../../components/PenpotEmbed.js';
 import { CodeBlock } from '../../components/CodeBlock.js';
+import { publicAsset } from '../../utils/publicAsset.js';
 
 const PENPOT_URL = null; // preenchido em v0.7+
 
@@ -47,7 +48,7 @@ export const logoPage = {
 
       h('section', {},
         h('h2', {}, 'Uso direto (assets)'),
-        CodeBlock({ language: 'html', code: '<img src="/brasoes/sigla/sigla-rgb.svg" alt="UFPE" />\n<img src="/brasoes/extenso/extenso-rgb.svg" alt="Universidade Federal de Pernambuco" />' }),
+        CodeBlock({ language: 'html', code: `<img src="${publicAsset('brasoes/sigla/sigla-rgb.svg')}" alt="UFPE" />\n<img src="${publicAsset('brasoes/extenso/extenso-rgb.svg')}" alt="Universidade Federal de Pernambuco" />` }),
       ),
 
       h('section', {},

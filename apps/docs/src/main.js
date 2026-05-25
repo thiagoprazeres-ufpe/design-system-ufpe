@@ -2,6 +2,7 @@ import { effect } from '@preact/signals-core';
 import { currentPage } from './signals.js';
 import { pages, groups } from './pages/index.js';
 import buildInfo from './build-info.js';
+import { publicAsset } from './utils/publicAsset.js';
 
 const app = document.getElementById('app');
 app.className = 'app';
@@ -11,7 +12,7 @@ const sidebar = document.createElement('aside');
 sidebar.className = 'sidebar';
 sidebar.innerHTML = `
   <div class="brand">
-    <img src="/brasoes/sigla/sigla-branco.png" alt="UFPE" />
+    <img src="${publicAsset('brasoes/sigla/sigla-branco.png')}" alt="UFPE" />
     <div>
       <strong>UFPE</strong>
       <small>Design System</small>
