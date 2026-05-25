@@ -27,16 +27,12 @@ jobs:
           node-version: 20
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm --filter @ufpe/tokens build
-      - run: pnpm --filter @ufpe/penpot-plugin build
-      - run: pnpm --filter @ufpe/docs build
+      - run: pnpm build:pages
         env:
           NODE_ENV: production
-      # Move plugin dist para /plugin dentro do site docs
-      - run: cp -r packages/penpot-plugin/dist apps/docs/dist/plugin
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: apps/docs/dist
+          path: apps/ufpe-docs/dist
 
   deploy:
     needs: build

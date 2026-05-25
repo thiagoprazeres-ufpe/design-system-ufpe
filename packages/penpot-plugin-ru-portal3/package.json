@@ -1,0 +1,21 @@
+{
+  "name": "@ru/penpot-plugin",
+  "version": "1.0.1",
+  "private": true,
+  "type": "module",
+  "description": "Plugin Penpot — sincroniza tokens DTCG RU Portal3 entre Git e Penpot.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@ru/tokens": "workspace:*"
+  },
+  "devDependencies": {
+    "@penpot/plugin-types": "^1.4.0",
+    "@penpot/plugin-styles": "^1.0.0",
+    "typescript": "^5.6.0",
+    "vite": "^5.4.0"
+  }
+}

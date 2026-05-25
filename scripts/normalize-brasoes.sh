@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 # Normaliza o kit oficial UFPE para nomes kebab-case ASCII (idempotente).
-# Estrutura esperada de entrada: public/brasoes/{Brasão extenso,Brasão sigla}/RGB/*
-# Estrutura de saída:           public/brasoes/{extenso,sigla}/*
+# Estrutura esperada de entrada: apps/ufpe-docs/public/brasoes/{Brasão extenso,Brasão sigla}/RGB/*
+# Estrutura de saída:           apps/ufpe-docs/public/brasoes/{extenso,sigla}/*
 
 set -euo pipefail
 
 cd "$(dirname "$0")/.."
-ROOT="public/brasoes"
+ROOT="apps/ufpe-docs/public/brasoes"
 
 rename_variant() {
   local src_dir="$1"   # "Brasão extenso"

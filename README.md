@@ -1,10 +1,10 @@
-# UFPE Design System
+# UFPE Design Systems
 
-**Penpot é a implementação.** Este repositório hospeda:
+**Penpot é a implementação.** Este monorepo hospeda o design system UFPE raiz e suas submarcas:
 
-- **Tokens** canônicos em [W3C DTCG](https://design-tokens.github.io/community-group/format/) (`packages/tokens/dtcg/`).
-- **Plugin Penpot** para sincronizar tokens bidirecionalmente (`packages/penpot-plugin/`).
-- **Portal de docs** estilo zeroheight (`apps/docs/`) consumindo tokens e referenciando a library Penpot.
+- **UFPE raiz** (`apps/ufpe-docs/`) com tokens `@ufpe/tokens` e plugin `@ufpe/penpot-plugin`.
+- **STI UFPE** (`apps/sti-ufpe-docs/`) com tokens `@sti-ufpe/tokens` e plugin `@sti-ufpe/penpot-plugin`.
+- **RU Portal3** (`apps/ru-portal3-docs/`) com tokens `@ru/tokens` e plugin `@ru/penpot-plugin`.
 - **Scripts CI** para publicar libraries Penpot, snapshots `.penpot` e releases (`penpot/scripts/`).
 
 > O uso da identidade visual da UFPE é exclusivo para membros da instituição.
@@ -27,16 +27,22 @@
 ```
 ufpe-design-system/
 ├── packages/
-│   ├── tokens/          # W3C DTCG canônico + builds derivados
-│   └── penpot-plugin/   # plugin de sincronização
+│   ├── tokens/                     # UFPE raiz
+│   ├── tokens-sti-ufpe/            # STI UFPE
+│   ├── tokens-ru-portal3/          # RU Portal3
+│   ├── penpot-plugin/
+│   ├── penpot-plugin-sti-ufpe/
+│   └── penpot-plugin-ru-portal3/
 ├── apps/
-│   └── docs/            # portal zeroheight-style
+│   ├── ufpe-docs/
+│   ├── sti-ufpe-docs/
+│   └── ru-portal3-docs/
 ├── penpot/
 │   ├── files/           # snapshots .penpot (CI nightly)
 │   ├── library.config.json
 │   ├── rpc.js
 │   └── scripts/         # export-snapshot, publish-library, verify-drift
-├── public/brasoes/      # kit oficial UFPE (sigla + extenso)
+├── scripts/build-pages.sh
 ├── .github/workflows/   # tokens-build, penpot-sync, penpot-snapshot, release, docs-deploy
 └── ROADMAP.md
 ```
@@ -49,11 +55,16 @@ corepack enable && corepack prepare pnpm@9 --activate
 pnpm install
 
 # Tokens
-pnpm tokens:build                    # gera CSS/JS/TS/Penpot JSON
+pnpm tokens:build                    # gera CSS/JS/TS/Penpot JSON dos três sistemas
 cat packages/tokens/src/tokens.css
 
 # Docs
-pnpm dev                             # localhost:5173
+pnpm dev:ufpe                        # localhost:5173
+pnpm dev:sti                         # localhost:5175
+pnpm dev:ru                          # localhost:5176
+
+# Build Pages completo
+pnpm build
 
 # Plugin Penpot
 pnpm dev:plugin                      # localhost:5174
@@ -67,10 +78,10 @@ pnpm penpot:verify                   # checa drift entre git e Penpot
 
 ## Brasão
 
-Kit oficial em `public/brasoes/`:
+Kit oficial em `apps/ufpe-docs/public/brasoes/`:
 
 ```
-public/brasoes/
+apps/ufpe-docs/public/brasoes/
 ├── sigla/   sigla-rgb.{svg,pdf,ai,eps,png,jpg} + sigla-{preto,branco}.png
 └── extenso/ extenso-rgb.{svg,pdf,ai,eps,png,jpg} + extenso-{preto,branco}.png
 ```
@@ -116,9 +127,9 @@ packages/tokens/dtcg/  ── push ──▶  Penpot library
 ```
 
 Pipeline:
-- **MR de tokens** (`packages/tokens/dtcg/**`) → CI valida + gera build.
+- **PR de tokens** (`packages/tokens/dtcg/**`) → CI valida + gera build.
 - **Merge em master** → CI deploya docs + plugin para GitHub Pages.
-- **Designer edita no Penpot** → plugin "Pull" → MR no GitLab (v0.9).
+- **Designer edita no Penpot** → plugin "Pull" → PR no GitHub (v0.9).
 - **Tag `v*`** → release Penpot library publish + `tokens.penpot.json` artifact.
 
 ## Produção
@@ -126,13 +137,17 @@ Pipeline:
 | Recurso | URL |
 |---|---|
 | Portal de docs | https://thiagoprazeres-ufpe.github.io/design-system-ufpe |
+| STI UFPE | https://thiagoprazeres-ufpe.github.io/design-system-ufpe/submarcas/sti-ufpe/ |
+| RU Portal3 | https://thiagoprazeres-ufpe.github.io/design-system-ufpe/submarcas/ru-portal3/ |
 | Plugin Penpot (manifest) | https://thiagoprazeres-ufpe.github.io/design-system-ufpe/plugin/manifest.json |
-| Tokens DTCG (raw) | https://thiagoprazeres-ufpe.github.io/design-system-ufpe/tokens.penpot.json _(roadmap)_ |
+| Plugin Penpot STI | https://thiagoprazeres-ufpe.github.io/design-system-ufpe/submarcas/sti-ufpe/plugin/manifest.json |
+| Plugin Penpot RU | https://thiagoprazeres-ufpe.github.io/design-system-ufpe/submarcas/ru-portal3/plugin/manifest.json |
+| Tokens DTCG UFPE | https://thiagoprazeres-ufpe.github.io/design-system-ufpe/tokens/tokens.penpot.json |
 | Repo | https://github.com/thiagoprazeres-ufpe/design-system-ufpe |
 
 ### Deploy
 
-GitHub Actions (`.github/workflows/deploy-pages.yml`) builda e publica em GitHub Pages a cada push em `master`. Sem secrets necessários — usa o token automático `GITHUB_TOKEN`.
+GitHub Actions (`.github/workflows/deploy-pages.yml`) roda `pnpm build:pages` e publica o artifact `apps/ufpe-docs/dist` em GitHub Pages a cada push em `master`. Sem secrets necessários — usa o token automático `GITHUB_TOKEN`.
 
 ### Git LFS
 

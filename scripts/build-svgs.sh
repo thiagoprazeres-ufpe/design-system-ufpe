@@ -22,6 +22,6 @@ convert() {
   echo "✓ $svg"
 }
 
-for pdf in public/brasoes/sigla/sigla-rgb.pdf public/brasoes/extenso/extenso-rgb.pdf; do
+for pdf in apps/ufpe-docs/public/brasoes/sigla/sigla-rgb.pdf apps/ufpe-docs/public/brasoes/extenso/extenso-rgb.pdf; do
   [[ -f "$pdf" ]] && convert "$pdf" || echo "skip $pdf (ausente)"
 done

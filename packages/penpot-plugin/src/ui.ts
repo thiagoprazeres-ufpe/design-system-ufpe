@@ -2,7 +2,7 @@
 // Comunica com plugin.ts via parent.postMessage().
 
 const ui = document.getElementById('ui')!;
-const DEFAULT_TOKENS_URL = 'https://raw.githubusercontent.com/ufpe/design-system/main/packages/tokens/src/tokens.penpot.json';
+const DEFAULT_TOKENS_URL = 'https://thiagoprazeres-ufpe.github.io/design-system-ufpe/tokens/tokens.penpot.json';
 
 ui.innerHTML = `
   <h1>UFPE Design System</h1>

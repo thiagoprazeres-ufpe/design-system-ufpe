@@ -1,0 +1,16 @@
+{
+  "name": "STI UFPE Design System",
+  "description": "Sincroniza tokens DTCG STI UFPE entre Git e Penpot; valida usos da marca.",
+  "code": "plugin.js",
+  "icon": "icon.png",
+  "permissions": [
+    "content:read",
+    "content:write",
+    "library:read",
+    "library:write",
+    "allow:downloads",
+    "allow:fetch:https://raw.githubusercontent.com",
+    "allow:fetch:https://thiagoprazeres-ufpe.github.io",
+    "allow:fetch:https://api.github.com"
+  ]
+}

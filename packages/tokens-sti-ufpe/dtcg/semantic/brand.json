@@ -1,0 +1,35 @@
+{
+  "color": {
+    "brand": {
+      "primary":   { "$value": "{color.azul}",    "$type": "color", "$description": "Cor primária do portal STI (azul institucional)" },
+      "accent":    { "$value": "{color.laranja}", "$type": "color", "$description": "Cor de destaque (lockup STI: T em laranja)" },
+      "contrast":  { "$value": "{color.branco}",  "$type": "color" },
+      "ink":       { "$value": "{color.preto}",   "$type": "color" }
+    },
+    "diretoria": {
+      "$description": "Cores por diretoria STI (uma por unidade — usada em avatares circulares)",
+      "berinjela": { "$value": "{color.berinjela}", "$type": "color" },
+      "roxo":      { "$value": "{color.roxo}",      "$type": "color" },
+      "azul":      { "$value": "{color.azul}",      "$type": "color" },
+      "verde":     { "$value": "{color.verde}",     "$type": "color" },
+      "laranja":   { "$value": "{color.laranja}",   "$type": "color" },
+      "bordo":     { "$value": "{color.bordo}",     "$type": "color" },
+      "preto":     { "$value": "{color.preto}",     "$type": "color" }
+    },
+    "surface": {
+      "default": { "$value": "{color.branco}",    "$type": "color" },
+      "muted":   { "$value": "{color.cinza.k10}", "$type": "color" },
+      "inverse": { "$value": "{color.preto}",     "$type": "color" }
+    },
+    "text": {
+      "default":  { "$value": "{color.preto}",    "$type": "color" },
+      "muted":    { "$value": "{color.cinza.k50}", "$type": "color" },
+      "inverse":  { "$value": "{color.branco}",   "$type": "color" },
+      "brand":    { "$value": "{color.azul}",     "$type": "color" }
+    },
+    "border": {
+      "default": { "$value": "{color.cinza.k10}", "$type": "color" },
+      "strong":  { "$value": "{color.cinza.k30}", "$type": "color" }
+    }
+  }
+}

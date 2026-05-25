@@ -1,0 +1,17 @@
+{
+  "name": "@sti-ufpe/tokens",
+  "version": "1.0.0",
+  "description": "STI UFPE Design Tokens — W3C DTCG (canônico) + CSS/JS/TS builds",
+  "type": "module",
+  "main": "./src/tokens.js",
+  "types": "./src/tokens.d.ts",
+  "exports": {
+    ".":            { "import": "./src/tokens.js", "types": "./src/tokens.d.ts" },
+    "./css":        "./src/tokens.css",
+    "./dtcg":       "./src/tokens.penpot.json"
+  },
+  "files": ["dtcg", "src", "build.js"],
+  "scripts": {
+    "build": "node build.js"
+  }
+}

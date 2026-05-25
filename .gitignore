@@ -9,10 +9,11 @@ penpot/file-ids.json
 
 # Tokens gerados (rebuild via `pnpm tokens:build`)
 packages/tokens/src/
+packages/tokens-*/src/
 
 # PDF do manual — referência local apenas, fora do repo
 manual_identidade.pdf
 public/manual_identidade.pdf
 
 # generated
-apps/docs/src/build-info.js
+apps/*-docs/src/build-info.js

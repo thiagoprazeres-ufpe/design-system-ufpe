@@ -1,0 +1,56 @@
+{
+  "color": {
+    "$description": "Paleta oficial STI UFPE (Manual de Aplicações da Marca STI, pág. 12)",
+    "berinjela": {
+      "$value": "#872367",
+      "$type": "color",
+      "$description": "C50 M100 Y30 K10 · magenta-escuro"
+    },
+    "roxo": {
+      "$value": "#662d91",
+      "$type": "color",
+      "$description": "C75 M100 Y0 K0"
+    },
+    "azul": {
+      "$value": "#0e76bb",
+      "$type": "color",
+      "$description": "C80 M50 Y0 K0"
+    },
+    "verde": {
+      "$value": "#13b198",
+      "$type": "color",
+      "$description": "C73 M0 Y49 K5 · verde-água"
+    },
+    "laranja": {
+      "$value": "#f7941d",
+      "$type": "color",
+      "$description": "C0 M50 Y100 K0"
+    },
+    "vermelho": {
+      "$value": "#f1592a",
+      "$type": "color",
+      "$description": "C0 M80 Y95 K0 · laranja-vermelho"
+    },
+    "bordo": {
+      "$value": "#b30638",
+      "$type": "color",
+      "$description": "C0 M100 Y30 K10 · vermelho-bordô (cor primária STI)"
+    },
+    "preto": {
+      "$value": "#242020",
+      "$type": "color",
+      "$description": "C0 M11 Y11 K86 · preto institucional STI (não 100% K)"
+    },
+    "branco": {
+      "$value": "#ffffff",
+      "$type": "color"
+    },
+    "cinza": {
+      "k10": { "$value": "#e6e6e6", "$type": "color" },
+      "k20": { "$value": "#cccccc", "$type": "color" },
+      "k30": { "$value": "#b3b3b3", "$type": "color" },
+      "k50": { "$value": "#808080", "$type": "color" },
+      "k70": { "$value": "#4d4d4d", "$type": "color" }
+    }
+  }
+}

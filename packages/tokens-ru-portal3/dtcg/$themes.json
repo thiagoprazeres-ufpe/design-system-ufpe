@@ -1,0 +1,12 @@
+[
+  {
+    "id": "default",
+    "name": "UFPE / Default",
+    "selectedTokenSets": {
+      "core/color": "source",
+      "core/typography": "source",
+      "core/spacing": "source",
+      "semantic/brand": "enabled"
+    }
+  }
+]
